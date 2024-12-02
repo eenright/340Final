@@ -11,21 +11,8 @@
 # Within the Map table it collect location information, the address, and then its corrdinates.
 # This will allow for a dot to be added to a map of where this food truck was
 
-# Within
-CREATE TABLE Trucks (
-      name VARCHAR(50) PRIMARY KEY,
-      type VARCHAR(50),
-      overall_rating INT,
-      address VARCHAR(100),
-      FOREIGN KEY (address) REFERENCES Map(address)
-);
-CREATE TABLE Comments (
-      comment_id INT PRIMARY KEY AUTO_INCREMENT,
-      username VARCHAR(50),
-      comment VARCHAR(100),
-      rating INT,
-      timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-      name VARCHAR(50),
-      FOREIGN KEY (username) REFERENCES Users(username),
-      FOREIGN KEY (name) REFERENCES Trucks(name)
-);
+# Within the Trucks table it holds information about the specific trucks like their name and type of food.
+# It also has its customer rating and address linked to it
+
+# Within the Comments table, it holds the username and the assosiated comment along with their rating of the food at the truck.
+# It is given a timestamp and the comment is linked to the truck as well so when people are looking for ratings that can see other comments about the truck.
